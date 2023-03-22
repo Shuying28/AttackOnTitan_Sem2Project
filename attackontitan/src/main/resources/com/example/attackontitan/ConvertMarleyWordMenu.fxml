@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.ConvertMarleyWordMenuController">
+   <children>
+      <Text fx:id="enterMarleySentence" layoutX="27.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Marley sentence:" />
+      <TextField fx:id="marleySentenceTextField" layoutX="157.0" layoutY="33.0" />
+      <Button fx:id="translateButton" layoutX="243.0" layoutY="72.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
+      <Button fx:id="backToPreviousButton" layoutX="534.0" layoutY="20.0" mnemonicParsing="false" onAction="#backToPrevious" text="Back" />
+      <Label fx:id="errorLabel" layoutX="315.0" layoutY="36.0" prefHeight="18.0" prefWidth="202.0" text="Label" textFill="#b10f0f" />
+      <Label fx:id="resultLabel" layoutX="51.0" layoutY="140.0" prefHeight="205.0" prefWidth="476.0" text="Label" />
+   </children>
+</AnchorPane>
