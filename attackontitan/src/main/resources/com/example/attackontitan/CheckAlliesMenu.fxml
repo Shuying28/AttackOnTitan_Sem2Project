@@ -3,38 +3,61 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.CheckAllAlliesMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.CheckAllAlliesMenuController">
    <children>
-      <TextField fx:id="characteristicsTextField" layoutX="117.0" layoutY="107.0" />
-      <TextField fx:id="nameTextField" layoutX="117.0" layoutY="76.0" />
-      <Button fx:id="addCharacterButton" layoutX="228.0" layoutY="146.0" mnemonicParsing="false" onAction="#addCharacter" text="Add" />
-      <Button fx:id="displayAllAlliesButton" layoutX="26.0" layoutY="352.0" mnemonicParsing="false" onAction="#displayAllAllies" text="Display all Eren's allies" />
-      <Text layoutX="23.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eren's Allies">
+      <ImageView fx:id="backgroundView" fitHeight="575.0" fitWidth="963.0" layoutY="1.0" />
+      <TextField fx:id="characteristicsTextField" layoutX="129.0" layoutY="315.0" opacity="0.86" prefHeight="36.0" prefWidth="298.0" />
+      <TextField fx:id="nameTextField" layoutX="130.0" layoutY="199.0" opacity="0.86" prefHeight="36.0" prefWidth="298.0" />
+      <Text fill="#c6ccff" layoutX="482.0" layoutY="517.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to display all Eren's allies">
          <font>
-            <Font size="24.0" />
+            <Font name="Bodoni MT" size="16.0" />
          </font>
       </Text>
-      <Text layoutX="67.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " textAlignment="RIGHT">
+      <Text fill="WHITE" layoutX="357.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eren's Allies">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT Condensed" size="70.0" />
          </font>
       </Text>
-      <Text layoutX="17.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Characteristics: ">
+      <Text fill="WHITE" layoutX="130.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " textAlignment="RIGHT">
          <font>
-            <Font size="14.0" />
+            <Font name="Gill Sans MT Bold" size="30.0" />
          </font>
       </Text>
-      <Button fx:id="backToPreviousButton" layoutX="517.0" layoutY="19.0" mnemonicParsing="false" onAction="#backToPrevious" text="Back">
+      <Text fill="WHITE" layoutX="129.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Characteristics: ">
          <font>
-            <Font size="18.0" />
+            <Font name="Gill Sans MT Bold" size="30.0" />
+         </font>
+      </Text>
+      <Label fx:id="nameErrorLabel" layoutX="130.0" layoutY="238.0" prefHeight="18.0" prefWidth="257.0" text="label" textFill="WHITE" />
+      <Label fx:id="characteristicsErrorLabel" layoutX="129.0" layoutY="356.0" prefHeight="18.0" prefWidth="258.0" text="label" textFill="WHITE" />
+      <Text fill="RED" layoutX="391.0" layoutY="518.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click Here">
+         <font>
+            <Font name="Bodoni MT" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="displayAllAlliesButton11" layoutX="130.0" layoutY="439.0" mnemonicParsing="false" onAction="#displayAllAllies" prefHeight="35.0" prefWidth="298.0" style="-fx-background-color: gold;" text="View Eren's Allies">
+         <font>
+            <Font name="Gill Sans MT" size="18.0" />
+         </font></Button>
+      <Button fx:id="addCharacterButton" layoutX="130.0" layoutY="390.0" mnemonicParsing="false" onAction="#addCharacter" prefHeight="35.0" prefWidth="298.0" style="-fx-background-color: gold;" text="Add">
+         <font>
+            <Font name="Gill Sans MT" size="18.0" />
+         </font></Button>
+      <Button fx:id="backToPreviousButton" layoutX="830.0" layoutY="32.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: GOLD;" text="Back">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
          </font>
       </Button>
-      <Label fx:id="resultLabel" layoutX="18.0" layoutY="187.0" prefHeight="152.0" prefWidth="516.0" text="label" />
-      <Label fx:id="nameErrorLabel" layoutX="275.0" layoutY="80.0" prefHeight="18.0" prefWidth="257.0" text="label" textFill="#e40d0d" />
-      <Label fx:id="characteristicsErrorLabel" layoutX="275.0" layoutY="111.0" prefHeight="18.0" prefWidth="258.0" text="label" textFill="#e40d0d" />
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="307.0" layoutX="522.0" layoutY="166.0" opacity="0.8" stroke="WHITE" strokeType="INSIDE" width="360.0" />
+      <Label fx:id="resultLabel" layoutX="553.0" layoutY="181.0" prefHeight="268.0" prefWidth="298.0" text="label" textFill="#002a6e">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
+         </font></Label>
    </children>
 </AnchorPane>

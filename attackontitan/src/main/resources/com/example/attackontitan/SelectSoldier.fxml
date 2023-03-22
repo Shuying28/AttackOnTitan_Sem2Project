@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.SelectSoldierController">
+   <children>
+      <ImageView fx:id="backgroundView" fitHeight="626.0" fitWidth="1001.0" layoutX="-20.0" layoutY="-2.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffeded" height="297.0" layoutX="45.0" layoutY="149.0" opacity="0.34" stroke="#ffa2a2" strokeType="INSIDE" width="873.0" />
+      <Text layoutX="326.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Your Soldier">
+         <font>
+            <Font name="Juice ITC" size="56.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="0.2613636309450323" endY="0.03787878787878788" startX="0.24621215372374558" startY="0.7386363636363638">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Text>
+      <TextField fx:id="soldierTextField" layoutX="289.0" layoutY="467.0" prefHeight="44.0" prefWidth="150.0" />
+      <Text fill="WHITE" layoutX="456.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is chosen.">
+         <font>
+            <Font name="Juice ITC" size="35.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="89.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reiner Braun" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="196.0" layoutY="282.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Armin Arlert" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="302.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Annie Leonhart" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font></Text>
+      <TextField fx:id="numberOfTitansTextField" layoutX="249.0" layoutY="21.0" prefHeight="44.0" prefWidth="118.0" />
+      <Label fx:id="errorLabel" layoutX="377.0" layoutY="43.0" prefHeight="18.0" prefWidth="313.0" textFill="RED" />
+      <Text fx:id="numberOfTitans" fill="WHITE" layoutX="57.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Titans:">
+         <font>
+            <Font name="Juice ITC" size="35.0" />
+         </font></Text>
+      <ImageView fx:id="charView1" fitHeight="92.0" fitWidth="59.0" layoutX="104.0" layoutY="172.0" />
+      <ImageView fx:id="charView2" fitHeight="92.0" fitWidth="68.0" layoutX="202.0" layoutY="175.0" />
+      <ImageView fx:id="charView3" fitHeight="103.0" fitWidth="95.0" layoutX="307.0" layoutY="165.0" />
+      <ImageView fx:id="charView4" fitHeight="92.0" fitWidth="70.0" layoutX="443.0" layoutY="172.0" />
+      <ImageView fx:id="charView5" fitHeight="103.0" fitWidth="77.0" layoutX="559.0" layoutY="168.0" />
+      <ImageView fx:id="charView6" fitHeight="92.0" fitWidth="68.0" layoutX="666.0" layoutY="171.0" />
+      <ImageView fx:id="charView9" fitHeight="86.0" fitWidth="63.0" layoutX="312.0" layoutY="319.0" />
+      <ImageView fx:id="charView10" fitHeight="86.0" fitWidth="59.0" layoutX="417.0" layoutY="322.0" />
+      <ImageView fx:id="charView11" fitHeight="86.0" fitWidth="59.0" layoutX="521.0" layoutY="321.0" />
+      <ImageView fx:id="charView7" fitHeight="92.0" fitWidth="70.0" layoutX="781.0" layoutY="171.0" />
+      <ImageView fx:id="charView13" fitHeight="86.0" fitWidth="66.0" layoutX="724.0" layoutY="319.0" />
+      <ImageView fx:id="charView12" fitHeight="86.0" fitWidth="59.0" layoutX="627.0" layoutY="319.0" />
+      <ImageView fx:id="charView8" fitHeight="86.0" fitWidth="63.0" layoutX="193.0" layoutY="316.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="4.0" layoutX="271.0" layoutY="130.0" stroke="BLACK" strokeType="INSIDE" width="418.0" />
+      <Text fill="WHITE" layoutX="422.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bertholdt Hoover" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="554.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jean Kristein" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="660.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sasha Blouse" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="765.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connie Springer" AnchorPane.topAnchor="267.2451171875">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="725.0" layoutY="425.7548828125" strokeType="OUTSIDE" strokeWidth="0.0" text="Hange Zoë" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="622.0" layoutY="425.7548828125" strokeType="OUTSIDE" strokeWidth="0.0" text="Erwin Smith" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="504.0" layoutY="425.7548828125" strokeType="OUTSIDE" strokeWidth="0.0" text="Levi Ackerman" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="397.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Historia Reiss" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="301.0" layoutY="425.7548828125" strokeType="OUTSIDE" strokeWidth="0.0" text="Eren Yeager" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="167.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mikasa Ackerman" AnchorPane.topAnchor="412.0">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="backToPreviousButton" layoutX="838.0" layoutY="27.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: GOLD;" text="Back" AnchorPane.topAnchor="27.0">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="button1" layoutX="89.0" layoutY="162.0" mnemonicParsing="false" onAction="#setButton1" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button3" layoutX="330.0" layoutY="163.0" mnemonicParsing="false" onAction="#setButton3" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="btConfirm" layoutX="591.0" layoutY="471.0" mnemonicParsing="false" onAction="#confirm" style="-fx-background-color: GOLD; -fx-background-radius: 5;" text="Confirm">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
+         </font></Button>
+      <Button fx:id="button4" layoutX="442.0" layoutY="162.0" mnemonicParsing="false" onAction="#setButton4" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button5" layoutX="543.0" layoutY="167.0" mnemonicParsing="false" onAction="#setButton5" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button6" layoutX="662.0" layoutY="164.0" mnemonicParsing="false" onAction="#setButton6" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button7" layoutX="788.0" layoutY="164.0" mnemonicParsing="false" onAction="#setButton7" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button2" layoutX="202.0" layoutY="164.0" mnemonicParsing="false" onAction="#setButton2" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button8" layoutX="191.0" layoutY="305.0" mnemonicParsing="false" onAction="#setButton8" opacity="0.0" prefHeight="103.0" prefWidth="70.0" AnchorPane.topAnchor="305.0" />
+      <Button fx:id="button9" layoutX="308.0" layoutY="306.0" mnemonicParsing="false" onAction="#setButton9" opacity="0.0" prefHeight="103.0" prefWidth="70.0" AnchorPane.topAnchor="306.0" />
+      <Button fx:id="button10" layoutX="413.0" layoutY="308.0" mnemonicParsing="false" onAction="#setButton10" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Button fx:id="button11" layoutX="516.0" layoutY="308.0" mnemonicParsing="false" onAction="#setButton11" opacity="0.0" prefHeight="103.0" prefWidth="70.0" AnchorPane.topAnchor="308.0" />
+      <Button fx:id="button12" layoutX="621.0" layoutY="306.0" mnemonicParsing="false" onAction="#setButton12" opacity="0.0" prefHeight="103.0" prefWidth="70.0" AnchorPane.topAnchor="306.0" />
+      <Button fx:id="button13" layoutX="723.0" layoutY="311.0" mnemonicParsing="false" onAction="#setButton13" opacity="0.0" prefHeight="103.0" prefWidth="70.0" />
+      <Label fx:id="errorLabel1" layoutX="320.0" layoutY="533.0" prefHeight="18.0" prefWidth="313.0" textFill="RED" />
+   </children>
+</AnchorPane>

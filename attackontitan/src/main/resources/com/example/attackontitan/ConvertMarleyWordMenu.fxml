@@ -3,16 +3,58 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.ConvertMarleyWordMenuController">
    <children>
-      <Text fx:id="enterMarleySentence" layoutX="27.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Marley sentence:" />
-      <TextField fx:id="marleySentenceTextField" layoutX="157.0" layoutY="33.0" />
-      <Button fx:id="translateButton" layoutX="243.0" layoutY="72.0" mnemonicParsing="false" onAction="#translate" text="Translate" />
-      <Button fx:id="backToPreviousButton" layoutX="534.0" layoutY="20.0" mnemonicParsing="false" onAction="#backToPrevious" text="Back" />
-      <Label fx:id="errorLabel" layoutX="315.0" layoutY="36.0" prefHeight="18.0" prefWidth="202.0" text="Label" textFill="#b10f0f" />
-      <Label fx:id="resultLabel" layoutX="51.0" layoutY="140.0" prefHeight="205.0" prefWidth="476.0" text="Label" />
+      <ImageView fx:id="backgroundView" fitHeight="555.0" fitWidth="960.0" />
+      <Text fill="WHITE" layoutX="53.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Marley sentence:" wrappingWidth="304.7999969482423">
+         <font>
+            <Font name="Gill Sans MT" size="30.0" />
+         </font></Text>
+      <TextField fx:id="marleySentenceTextField" layoutX="349.0" layoutY="52.0" prefHeight="33.0" prefWidth="281.0" />
+      <Button fx:id="translateButton" layoutX="647.0" layoutY="49.0" mnemonicParsing="false" onAction="#translate" opacity="0.75" style="-fx-background-color: gold;" text="Translate">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
+         </font></Button>
+      <Button fx:id="backToPreviousButton" layoutX="844.0" layoutY="34.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: gold;" text="Back">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
+         </font></Button>
+      <ImageView fx:id="alert" fitHeight="231.0" fitWidth="242.0" layoutX="658.0" layoutY="250.0" onMouseClicked="#caesarCipherEncryptionByImposter" preserveRatio="true" />
+      <ImageView fx:id="convertFrame" fitHeight="336.0" fitWidth="556.0" layoutX="59.0" layoutY="136.0" />
+      <Label fx:id="errorLabel" layoutX="349.0" layoutY="86.0" prefHeight="26.0" prefWidth="437.0" text="errorLabel" textFill="#b01212">
+         <font>
+            <Font name="Gill Sans MT" size="15.0" />
+         </font></Label>
+      <Label fx:id="resultLabel" layoutX="162.0" layoutY="188.0" prefHeight="177.0" prefWidth="391.0" text="Label">
+         <font>
+            <Font name="Book Antiqua Bold Italic" size="18.0" />
+         </font></Label>
+      <Text fx:id="warning1" fill="#d91111" layoutX="638.0" layoutY="210.0" stroke="#401a1d" strokeType="INSIDE" strokeWidth="0.0" text="Our information stole by IMPOSTER !" textAlignment="CENTER" wrappingWidth="269.5999237060548">
+         <font>
+            <Font name="Book Antiqua Bold" size="23.0" />
+         </font>
+      </Text>
+      <Text fx:id="warning2" fill="#d91111" layoutX="638.0" layoutY="270.0" stroke="#401a1d" strokeType="INSIDE" strokeWidth="0.0" text="⬇Click to learn more ⬇" textAlignment="CENTER" wrappingWidth="269.5999237060548">
+         <font>
+            <Font name="Book Antiqua Bold" size="22.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="decryptByAllies" fitHeight="158.0" fitWidth="115.0" layoutX="722.0" layoutY="112.0" onMouseClicked="#caesarCipherDecryption" preserveRatio="true" />
+      <ImageView fx:id="encryptByAllies" fitHeight="178.0" fitWidth="128.0" layoutX="709.0" layoutY="293.0" onMouseClicked="#encryptionByAllies" opacity="0.9" />
+      <Text fx:id="decrypt" layoutX="740.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Decrypt">
+         <font>
+            <Font name="Book Antiqua Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="encrypt" layoutX="740.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Encrypt">
+         <font>
+            <Font name="Book Antiqua Bold" size="20.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

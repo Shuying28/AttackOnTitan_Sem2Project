@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.DetermineBestPathMenuController">
+<AnchorPane prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.attackontitan.Controller.DetermineBestPathMenuController">
    <children>
-      <Text fx:id="enterLocationOfTitan" layoutX="103.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter location of Titan:" />
-      <TextField fx:id="locationOfTitanEnteredByUser" layoutX="236.0" layoutY="92.0" />
-      <Button fx:id="btBackToPrevious" layoutX="538.0" layoutY="29.0" mnemonicParsing="false" onAction="#backToPrevious" text="Back" />
-      <Button fx:id="btDetermine" layoutX="394.0" layoutY="118.0" mnemonicParsing="false" text="Determine" />
+      <ImageView fx:id="backgroundView" fitHeight="674.0" fitWidth="1000.0" layoutX="-38.0" layoutY="-12.0" />
+      <Text fx:id="enterLocationOfTitan" fill="WHITE" layoutX="73.0" layoutY="106.0" stroke="#ff6600" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter location of Titan:">
+         <font>
+            <Font name="Gill Sans MT" size="35.0" />
+         </font></Text>
+      <Button fx:id="btBackToPrevious" layoutX="842.0" layoutY="26.0" mnemonicParsing="false" onAction="#backToPrevious" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: GOLD;" text="Back">
+         <font>
+            <Font name="Gill Sans MT Condensed" size="25.0" />
+         </font></Button>
+      <Button fx:id="btDetermine" layoutX="609.0" layoutY="77.0" mnemonicParsing="false" onAction="#determine" opacity="0.93" style="-fx-background-color: White;" text="Determine">
+         <font>
+            <Font name="Gill Sans MT" size="20.0" />
+         </font></Button>
+      <Label fx:id="resultLabel" layoutX="257.0" layoutY="331.0" prefHeight="166.0" prefWidth="490.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="Bell MT Bold" size="35.0" />
+         </font></Label>
+      <Label fx:id="errorLabel" layoutX="420.0" layoutY="120.0" prefHeight="18.0" prefWidth="266.0" text="Label" textFill="RED" />
+      <Text fx:id="shortSentence" fill="WHITE" layoutX="73.0" layoutY="249.0" stroke="#ff6600" strokeType="OUTSIDE" strokeWidth="0.0" text="Hey, there is/are the shortest path to kill Titan.">
+         <font>
+            <Font name="Gill Sans MT" size="30.0" />
+         </font>
+      </Text>
+      <Text fx:id="shortSentence1" fill="WHITE" layoutX="266.0" layoutY="321.0" stroke="#ff6a00" strokeType="OUTSIDE" strokeWidth="0.0" text="Let's kill Titan!">
+         <font>
+            <Font name="Gill Sans MT" size="35.0" />
+         </font>
+      </Text>
+      <TextField fx:id="locationOfTitanEnteredByUser" layoutX="419.0" layoutY="78.0" prefHeight="34.0" prefWidth="166.0" />
    </children>
 </AnchorPane>
