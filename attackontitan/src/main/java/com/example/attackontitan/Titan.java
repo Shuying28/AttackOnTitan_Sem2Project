@@ -2,22 +2,25 @@ package com.example.attackontitan;
 
 import java.util.Random;
 
+/** 2.3 Upper Part (Killing Priority) */
 public class Titan implements Comparable<Titan> {
     Random r = new Random();
-
     private int height,legs,speed;
     private int risk=0;
     private  int random , randomType;
     private String pattern,climb;
-    private static int titanNo = 0;
+    //Store the total number of  Titan
+    private static int titanInt = 0;
+    //Store the position index of Titan
     private int num;
 
     public Titan() {
-        titanNo++;
-        this.num = titanNo ;
+        titanInt++;
+        this.num = titanInt ;
         generateType();
     }
 
+    /** Random Generate Height */
     public void randomHeight() {
         random = r.nextInt(30) + 1;
         this.height = random;
@@ -30,6 +33,7 @@ public class Titan implements Comparable<Titan> {
         }
     }
 
+    /** Random Generate Legs */
     public void randomLegs() {
         random = r.nextInt(5);  //0-4
         while (random % 2 == 1) {
@@ -45,6 +49,7 @@ public class Titan implements Comparable<Titan> {
         }
     }
 
+    /** Random Generate Speed */
     public void randomSpeed() {
         random = r.nextInt(30) + 1;
         this.speed = random;
@@ -58,6 +63,7 @@ public class Titan implements Comparable<Titan> {
     }
 
 
+    /** Random Generate Pattern */
     public void randomPattern() {
         random = r.nextInt(3);
         switch (random) {
@@ -76,6 +82,7 @@ public class Titan implements Comparable<Titan> {
         }
     }
 
+    /** Random Generate Climb */
     public void randomClimb() {
         random = r.nextInt(2);
         switch (random) {
@@ -90,8 +97,13 @@ public class Titan implements Comparable<Titan> {
         }
     }
 
-    public static void setTitanNo(int titanNo) {
-        Titan.titanNo = titanNo;
+    /** Getter and Setter method */
+    public static void setTitanInt(int titanInt) {
+        Titan.titanInt = titanInt;
+    }
+
+    public static int getTitanInt() {
+        return titanInt;
     }
 
     public int getNum() {
@@ -122,6 +134,7 @@ public class Titan implements Comparable<Titan> {
         return climb;
     }
 
+    /** Random Generate Type of Titan */
     public void generateType() {
         this.randomType = r.nextInt(3);
         if (randomType == 0) {
@@ -140,21 +153,27 @@ public class Titan implements Comparable<Titan> {
         }
     }
 
-    public String toString() {
+    /** Display the random generated Titan */
+    public String display() {
+        if(titanInt >= 16){
+            titanInt = 0;
+            this.num=0;
+        }
         String str = "";
         if (this.randomType == 0) {
-            str = "Titan" + this.num + ": Abnormal Titan Risk=" + risk;
+            str = "Titan" + getNum() + ": Abnormal Titan Risk=" + risk;
 
         } else if (this.randomType == 1) {
-            str = "Titan" + this.num + ": Abnormal Titan Risk=" + risk;
+            str = "Titan" + getNum() + ": Abnormal Titan Risk=" + risk;
 
         } else {
-            str += String.format("Titan" + this.num + ": Normal Titan (%dm, %d legs, %dms, %s, %s) Risk=%d", height, legs, speed, pattern, climb, risk);
+            str += String.format("Titan" + getNum() + ": Normal Titan (%dm, %d legs, %dms, %s, %s) Risk=%d", height, legs, speed, pattern, climb, risk);
 
         }
         return str;
     }
 
+    /** Compare the risk of Titan */
     @Override
     public int compareTo(Titan o) {
         return Integer.compare(this.getRisk(), o.getRisk());

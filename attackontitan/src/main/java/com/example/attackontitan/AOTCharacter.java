@@ -1,9 +1,11 @@
 package com.example.attackontitan;
 
+/** 2.1 Basic Feature */
 public class AOTCharacter {
     private String name;
     private int height, weight, strength, agility, intelligence, coordination, leadership;
 
+    /** The only constructor for AOTCharacter */
     public AOTCharacter(String name, int height, int weight, int strength, int agility, int intelligence, int coordination, int leadership) {
         this.name = name;
         this.height = height;
@@ -15,6 +17,7 @@ public class AOTCharacter {
         this.leadership = leadership;
     }
 
+    /** toString method */
     public String toString() {
         return "Name: " + name +
                 "\nHeight: " + height + "cm" +
@@ -26,6 +29,7 @@ public class AOTCharacter {
                 "\nLeadership: " + leadership + "\n";
     }
 
+    /** Getter method */
     public String getName() {
         return name;
     }
@@ -56,5 +60,10 @@ public class AOTCharacter {
 
     public int getLeadership() {
         return leadership;
+    }
+
+    /** For 2.3 to return the sum of strength and agility */
+    public int sumOfStrengthAgility(){
+        return getStrength()+getAgility();
     }
 }
