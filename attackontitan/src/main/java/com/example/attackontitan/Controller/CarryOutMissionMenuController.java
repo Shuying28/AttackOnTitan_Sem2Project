@@ -2,18 +2,26 @@ package com.example.attackontitan.Controller;
 
 
 import com.example.attackontitan.MainApplication;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import com.example.attackontitan.MyQueue;
+
+import java.io.File;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.Stack;
 
+/** 2.3 Lower Part Basic Feature (HamiltonianCycle) */
 public class CarryOutMissionMenuController implements Initializable {
     @FXML
     private Text startingPoint;
@@ -27,10 +35,14 @@ public class CarryOutMissionMenuController implements Initializable {
     private Label resultLabel;
     @FXML
     private Label errorLabel;
+    @FXML
+    private ImageView backgroundView;
+    @FXML
+    private ImageView wallView;
     private StringBuilder stringBuilder;
     //Graph map
     private ArrayList<MyQueue> map = new ArrayList<>();
-    //start (& end) vertex index
+    //start or end of vertex index
     private int startPoint;
     //list mapping of vertices to mark vertex visited
     private boolean[] visited;
@@ -38,8 +50,14 @@ public class CarryOutMissionMenuController implements Initializable {
     private Stack<Integer> hamPath = new Stack<>();
     //number of vertices in the graph
     private int N;
+    //
     private boolean hasCycle = false;
     private MainApplication main;
+
+
+    String path4 = "C:\\Users\\Asus\\IdeaProjects\\attackontitan23JuneOMG\\attackontitan\\src\\main\\resources\\Images\\button.mp3";
+    Media media4 = new Media (new File(path4).toURI().toString());
+    MediaPlayer mediaPlayer4 = new MediaPlayer(media4);
 
     public void setApp(MainApplication main) {
         this.main = main;
@@ -49,7 +67,8 @@ public class CarryOutMissionMenuController implements Initializable {
         main.goToLoginMenu();
     }
 
-    public void check() {
+    public void check(ActionEvent event) {
+        mediaPlayer4.play();
         clear();
         stringBuilder = new StringBuilder();
         startScouting();
@@ -58,12 +77,13 @@ public class CarryOutMissionMenuController implements Initializable {
 
     //Construct a new node to be added into map
     private void newNode(int currentValue, int[] adjacentValues) {
+        //Initialize a new nodeQueue
         MyQueue<Integer> nodeQueue = new MyQueue<>();
 
         //Add current value into nodeQueue, eg: 0
         nodeQueue.enqueue(currentValue);
 
-        //Add all adjacent values into nodeQueue, eg: 1, 5, 7
+        //Add all adjacent values (neighbours) into nodeQueue, eg: 1, 5, 7
         for (int i = 0; i < adjacentValues.length; i++) {
             nodeQueue.enqueue(adjacentValues[i]);
         }
@@ -72,7 +92,7 @@ public class CarryOutMissionMenuController implements Initializable {
         map.add(nodeQueue);
     }
 
-    // getter method for mapNode
+    //Getter method for mapNode
     private MyQueue getMapNode(int index) {
         return map.get(index);
     }
@@ -81,26 +101,29 @@ public class CarryOutMissionMenuController implements Initializable {
     private void startScouting() {
         try {
             startPoint = Integer.parseInt(startingPointTextField.getText());
+
+            //If the starting point entered by user is out of range
             if (startPoint < 0 || startPoint >= map.size()) {
-                errorLabel.setText("Out of the range from 0 to " + (map.size() - 1));
+                errorLabel.setText("Out of the range of 0 to " + (map.size() - 1));
                 return;
             }
         } catch (Exception e) {
+            //If the user not enter an integer
             errorLabel.setText("Please enter an Integer!");
             return;
         }
         errorLabel.setText("");
-        findHamiltonianCycle(startPoint);
+        findHamiltonianCycle();
     }
 
-    //method to inititate the search of the Hamiltonian cycle
-    private void findHamiltonianCycle(int startPoint){
-        this.startPoint=startPoint;
+    //Method to inititate the search of the Hamiltonian cycle
+    private void findHamiltonianCycle(){
         //Add starting node to the list
         hamPath.add(startPoint);
+        //Initialize visited array
         visited= new boolean[map.size()];
 
-        //start searching the path
+        //Start searching the path
         getHamiltonianCycle(startPoint);
         if (!hasCycle){
             resultLabel.setText("No path found\n");
@@ -113,12 +136,14 @@ public class CarryOutMissionMenuController implements Initializable {
         //Base condition: if the vertex is the start vertex
         //and all nodes have been visited (start vertex twice)
         if (node == startPoint && hamPath.size() == map.size()+1) {
+            stringBuilder.append("\n");
+
             hasCycle = true;
             stringBuilder.append("\nPath found!\n");
 
-            //print the Hamiltonian path
+            //Print the Hamiltonian path
             for (int i = 0; i < hamPath.size() - 1; i++) {
-                stringBuilder.append(hamPath.get(i)).append("-->");
+                stringBuilder.append(hamPath.get(i)).append(" --> ");
             }
 
             stringBuilder.append(hamPath.get(0));
@@ -131,7 +156,7 @@ public class CarryOutMissionMenuController implements Initializable {
         for (int i = 1; i < getMapNode(node).getSize(); i++) {
             int neighbourNode = (int) getMapNode(node).getElement(i);
 
-            // process only unvisited vertices as the Hamiltonian
+            // Process only unvisited vertices as the Hamiltonian
             // path visit each vertex exactly once
             if (!visited[neighbourNode]) {
                 visited[neighbourNode] = true;
@@ -150,8 +175,21 @@ public class CarryOutMissionMenuController implements Initializable {
         hamPath.clear();
     }
 
+    private void setBackToPreviousButton(ActionEvent event) {
+        mediaPlayer4.play();
+        try {
+            main.goToLoginMenu();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        backgroundView.setImage(new Image(new File("C:\\Users\\Asus\\IdeaProjects\\attackontitan23JuneOMG\\attackontitan\\src\\main\\resources\\Images\\Convert3.jpg").toURI().toString()));
+
+        //Adding all the current nodes and their adjacent nodes into graph map
         int[] adjacentValue0 = {1,5,7};
         newNode(0,adjacentValue0);
         int[] adjacentValue1 = {0,2,4,6};
@@ -184,6 +222,9 @@ public class CarryOutMissionMenuController implements Initializable {
         newNode(14,adjacentValue14);
         int[] adjacentValue15 = {6,9,14};
         newNode(15,adjacentValue15);
+
+        backToPreviousButton.setOnAction(this::setBackToPreviousButton);
+        checkButton.setOnAction(this::check);
         resultLabel.setText("");
         errorLabel.setText("");
     }
